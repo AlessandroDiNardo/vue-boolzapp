@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- fotn awesome -->
+    <script src="https://kit.fontawesome.com/897e5eb927.js" crossorigin="anonymous">
+    </script>
     <!-- js CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- css -->
@@ -22,22 +25,127 @@
 
             <!-- side-topbar -->
             <div class="side-topbar">
-
+                <div class="left-side-profile">
+                    <img src="img/Trevor.jpg" alt="">
+                    <div>Trevor</div>
+                </div>
+                <div class="right-side-profile">
+                    <i class="fa-solid fa-circle-notch btn-settings"></i>
+                    <i class="fa-solid fa-message btn-settings"></i>
+                    <i class="fa-solid fa-ellipsis-vertical btn-settings"></i>
+                </div>
             </div>
 
             <!-- notification -->
             <div class="notification">
-
+                <i class="fa-solid fa-bell-slash bell-slash"></i>
+                <div class="text-notification">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <div>Attiva notifiche desktop</div>
+                </div>
             </div>
 
             <!-- search -->
-            <div class="search">
-
+            <div class="search-block">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass glass"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
             </div>
 
             <!-- friend chats -->
-            <div class="friend-chats">
+            <div class="friend-chats-block">
+                <div class="friend-chats">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Michele</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Fabio</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_3.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Samuele</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_4.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Alessandro B.</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_3.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Alessandro L.</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_io.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Claudia.</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Federico</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Davide</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
 
+
+                <div class="friend-chats">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Davide</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Davide</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                <div class="friend-chats">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info-chat">
+                        <div>Davide</div>
+                        <div>Ultimo messaggio arrivato</div>
+                    </div>
+                    <div id="data">12:00</div>
+                </div>
+                
             </div>
         </section>
 
@@ -46,17 +154,36 @@
             
             <!-- topbar chat user -->
             <div class="topbar-chat-user">
-
+                <div class="left-side-chat">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div>
+                        <div>Michele</div>
+                        <div>Ultimo accesso oggi alle 12:00</div>
+                    </div>
+                </div>
+                <div class="right-side-chat">
+                    <i class="fa-solid fa-magnifying-glass btn-settings"></i>
+                    <i class="fa-solid fa-paperclip btn-settings"></i>
+                    <i class="fa-solid fa-ellipsis-vertical btn-settings"></i>
+                </div>
             </div>
 
             <!-- chat block -->
             <div class="chat-block">
+                <div class="msg-user">Hai portato a spasso il cane?</div>
+                <div class="msg-user">Ricordati di stendere i panni!</div>
+
+                <div class="msg-received">Tutto fatto</div>
 
             </div>
 
             <!-- send massage -->
             <div class="send-massage">
-
+                <i class="fa-regular fa-face-smile btn-settings"></i>
+                <div class="keyboard">
+                    <input type="text" placeholder="Scrivi un messaggio">
+                </div>
+                <i class="fa-solid fa-microphone btn-settings"></i>
             </div>
         </section>
     </div>
