@@ -55,22 +55,21 @@
 
             <!-- contact chats -->
             <div class="contact-chats-block" >
-                <ul class="contact-chats" v-for="contact in contacts">
-                    <li class="img-avatar">
+                <div 
+                    class="contact-chats" v-for="(contact, index) in contacts" @click="setChat(index)" :class="index === actualElement ? 'active' : ''">
+                    <div class="img-avatar">
                         <img :src="contact.avatar" alt="">
-                    </li>
-                    <li class="info-chat">
-                        <div>
-                            {{contact.name}}
-                        </div>
+                    </div>
+                    <div class="info-chat">
+                        <div>{{contact.name}}</div>
                         <div>
                             {{contact.messages[contact.messages.length - 1].message}}
                         </div>
-                    </li>
-                    <li class="data">
+                    </div>
+                    <div class="data">
                         {{contact.messages[contact.messages.length - 1].date}}
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -80,10 +79,12 @@
             <!-- topbar chat user -->
             <div class="topbar-chat-user">
                 <div class="left-side-chat">
-                    <img src="img/avatar_1.jpg" alt="">
+                    <img :src="contacts[actualElement].avatar" alt="">
                     <div>
-                        <div>Michele</div>
-                        <div>Ultimo accesso oggi alle 12:00</div>
+                        <div>{{contacts[actualElement].name}}</div>
+                        <div>
+                            <!-- Ultimo accesso {{contacts[actualElement].messages[          contact.messages.length - 1].date}} -->
+                        </div>
                     </div>
                 </div>
                 <div class="right-side-chat">
@@ -95,17 +96,12 @@
 
             <!-- chat block -->
             <div class="chat-block">
-                <div class="msg-user">
-                    Hai portato a spasso il cane?
-                    <div class="msg-data">15:30</div>
-                </div>
-                <div class="msg-user">
-                    Ricordati di stendere i panni!
-                    <div class="msg-data">15:50</div>
-                </div>
-                <div class="msg-received">
-                    Tutto fatto
-                    <div class="msg-data">16.15</div>
+                <div 
+                    v-for="message in contacts[actualElement].messages" 
+                    :class="message.status === sent ? 'msg-sent' : 'msg-received'"
+                    >
+                    {{message.message}}
+                    <div class="msg-data">{{message.time}}</div>
                 </div>
             </div>
 
@@ -113,7 +109,7 @@
             <div class="send-massage">
                 <i class="fa-regular fa-face-smile btn-settings"></i>
                 <div class="keyboard">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMsg" @KeyUp.enter="addMsg">
                 </div>
                 <i class="fa-solid fa-microphone btn-settings"></i>
             </div>
