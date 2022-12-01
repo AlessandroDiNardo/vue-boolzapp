@@ -18,7 +18,7 @@
     <div class="top-bar-body-bg"></div>
 
     <!-- container -->
-    <div id="id" class="container">
+    <div id="app" class="container">
         
         <!-- sidebar -->
         <section class="sidebar-main">
@@ -53,99 +53,24 @@
                 </div>
             </div>
 
-            <!-- friend chats -->
-            <div class="friend-chats-block">
-                <div class="friend-chats">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Michele</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Fabio</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_3.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Samuele</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_4.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Alessandro B.</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_3.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Alessandro L.</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_io.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Claudia.</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Federico</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Davide</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-
-
-                <div class="friend-chats">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Davide</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Davide</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                <div class="friend-chats">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info-chat">
-                        <div>Davide</div>
-                        <div>Ultimo messaggio arrivato</div>
-                    </div>
-                    <div id="data">12:00</div>
-                </div>
-                
+            <!-- contact chats -->
+            <div class="contact-chats-block" >
+                <ul class="contact-chats" v-for="contact in contacts">
+                    <li class="img-avatar">
+                        <img :src="contact.avatar" alt="">
+                    </li>
+                    <li class="info-chat">
+                        <div>
+                            {{contact.name}}
+                        </div>
+                        <div>
+                            {{contact.messages[contact.messages.length - 1].message}}
+                        </div>
+                    </li>
+                    <li class="data">
+                        {{contact.messages[contact.messages.length - 1].date}}
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -170,11 +95,18 @@
 
             <!-- chat block -->
             <div class="chat-block">
-                <div class="msg-user">Hai portato a spasso il cane?</div>
-                <div class="msg-user">Ricordati di stendere i panni!</div>
-
-                <div class="msg-received">Tutto fatto</div>
-
+                <div class="msg-user">
+                    Hai portato a spasso il cane?
+                    <div class="msg-data">15:30</div>
+                </div>
+                <div class="msg-user">
+                    Ricordati di stendere i panni!
+                    <div class="msg-data">15:50</div>
+                </div>
+                <div class="msg-received">
+                    Tutto fatto
+                    <div class="msg-data">16.15</div>
+                </div>
             </div>
 
             <!-- send massage -->
