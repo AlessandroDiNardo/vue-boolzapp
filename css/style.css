@@ -22,18 +22,17 @@ body{
     cursor: pointer;
 }
 
-
-
-
-
 .container{
     min-width: 1500px;
     position: absolute;
     top: 5%;
-    left: 11%;
+    left: 8%;
+    bottom: 5%;
     display: flex;
     background-color: rgb(255, 255, 255);
 }
+
+
 
 .sidebar-main{
     width: 30%;
@@ -52,7 +51,6 @@ body{
     padding: 5px 10px;
     display: flex;
     align-items: center;
-    color: #54656f;
 }
 
 .left-side-profile{
@@ -155,7 +153,7 @@ body{
 .contact-chats{
     display: flex;
     padding: 8px 10px;
-    gap: 20px;
+    gap: 10px;
 }
 
 .contact-chats.active{
@@ -163,16 +161,16 @@ body{
 }
 
 .img-avatar{
-    width: 20%;
+    width: 15%;
 }
 
 .img-avatar img{
-    width: 100%;
+    width: 82%;
     border-radius: 50%;
 }
 
 .info-chat{
-    width: 60%;
+    width: 70%;
     line-height: 20px;
 }
 
@@ -186,8 +184,7 @@ body{
 }
 
 .data{
-    width: 20%;
-    margin-left: 120px;
+    width: 15%;
     font-size: 12px;
     color: #54656f;
     line-height: 20px;
@@ -205,7 +202,6 @@ body{
     width: 100%;
     height: 70px;
     display: flex;
-    color: #54656f;
     padding: 5px 10px;
     background-color: #eaeaea;
 }
@@ -216,6 +212,15 @@ body{
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.info-chat-contact{
+    line-height: 20px;
+}
+
+.info-chat-contact :last-child{
+    font-size: 12px;
+    color: #54656f;
 }
 
 .left-side-chat img{
@@ -253,7 +258,6 @@ body{
     position: relative;
     top: 0;
     left: 65%;
-    /* debug */
     width: 300px;
 }
 
@@ -265,7 +269,6 @@ body{
     position: relative;
     top: 0;
     left: 5%;
-    /* debug */
     width: 300px;
 }
 

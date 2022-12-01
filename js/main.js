@@ -196,14 +196,14 @@ createApp({
             this.actualElement = index;
         },
 
-        // addMsg(){
-        //     this.contact[index].messages.push({
-        //         date: '01/12/2020 18:50',
-        //         time: '18:50',
-        //         message: this.newMsg,
-        //         status: 'sent' 
-        //     });
-        //     this.newTask = '';
-        // }
+        addMsg(){
+            this.contacts[actualElement].messages.push({
+                date: '01/12/2020 18:50',
+                time: '18:50',
+                message: this.newMsg,
+                status: 'sent'
+            });
+            this.newMsg = '';
+        }
     }
 }).mount('#app')

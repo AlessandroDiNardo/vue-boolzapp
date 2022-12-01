@@ -80,10 +80,10 @@
             <div class="topbar-chat-user">
                 <div class="left-side-chat">
                     <img :src="contacts[actualElement].avatar" alt="">
-                    <div>
-                        <div>{{contacts[actualElement].name}}</div>
+                    <div class="info-chat-contact">
+                        <h4>{{contacts[actualElement].name}}</h4>
                         <div>
-                            <!-- Ultimo accesso {{contacts[actualElement].messages[          contact.messages.length - 1].date}} -->
+                            Ultimo accesso...
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
             <div class="chat-block">
                 <div 
                     v-for="message in contacts[actualElement].messages" 
-                    :class="message.status === sent ? 'msg-sent' : 'msg-received'"
+                    :class="message.status === 'sent' ? 'msg-sent' : 'msg-received'"
                     >
                     {{message.message}}
                     <div class="msg-data">{{message.time}}</div>
