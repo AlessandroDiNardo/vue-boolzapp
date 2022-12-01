@@ -197,12 +197,18 @@ createApp({
         },
 
         addMsg(){
-            this.contacts[actualElement].messages.push({
-                date: '01/12/2020 18:50',
-                time: '18:50',
-                message: this.newMsg,
-                status: 'sent'
-            });
+            if(this.newMsg.length < 1 || this.newMsg === ''){
+                this.visible = false;
+            }else{
+                this.contacts[this.actualElement].messages.push({
+                    date: '01/12/2020 18:50',
+                    time: '18:50',
+                    message: this.newMsg,
+                    status: 'sent'
+                }
+                );
+                this.visible = true;    
+            }
             this.newMsg = '';
         }
     }
