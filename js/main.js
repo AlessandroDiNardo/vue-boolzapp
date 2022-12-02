@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
         actualElement: 0,
+        searchContact: '',
             contacts: [
                 {
                     name: 'Michele',
