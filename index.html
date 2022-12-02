@@ -27,7 +27,7 @@
             <div class="side-topbar">
                 <div class="left-side-profile">
                     <img src="img/Trevor.jpg" alt="">
-                    <div>Trevor</div>
+                    <h4>Trevor Jones</h4>
                 </div>
                 <div class="right-side-profile">
                     <i class="fa-solid fa-circle-notch btn-settings"></i>
@@ -41,7 +41,7 @@
                 <i class="fa-solid fa-bell-slash bell-slash"></i>
                 <div class="text-notification">
                     <div>Ricevi notifiche di nuovi messaggi</div>
-                    <div>Attiva notifiche desktop</div>
+                    <a href="">Attiva notifiche desktop</a>
                 </div>
             </div>
 
@@ -49,27 +49,33 @@
             <div class="search-block">
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass glass"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact">
                 </div>
             </div>
 
             <!-- contact chats -->
             <div class="contact-chats-block" >
-                <div 
-                    class="contact-chats" v-for="(contact, index) in contacts" @click="setChat(index)" :class="index === actualElement ? 'active' : ''">
-                    <div class="img-avatar">
-                        <img :src="contact.avatar" alt="">
-                    </div>
-                    <div class="info-chat">
-                        <div>{{contact.name}}</div>
-                        <div>
-                            {{contact.messages[contact.messages.length - 1].message}}
+                <template v-for="(contact, index) in contacts">
+                    <div 
+                    class="contact-chats" 
+                    @click="setChat(index)" 
+                    :class="index === actualElement ? 'active' : ''" 
+                    v-if="filterContact(index)"
+                    >
+                        <div class="img-avatar">
+                            <img :src="contact.avatar" alt="">
+                        </div>
+                        <div class="info-contact">
+                            <h4>{{contact.name}}</h4>
+                            <div>
+                                {{contact.messages[contact.messages.length - 1].message}}
+                            </div>
+                        </div>
+                        <div class="data">
+                            {{contact.messages[contact.messages.length - 1].date}}
                         </div>
                     </div>
-                    <div class="data">
-                        {{contact.messages[contact.messages.length - 1].date}}
-                    </div>
-                </div>
+               </template>
             </div>
         </section>
 
@@ -83,7 +89,7 @@
                     <div class="info-chat-contact">
                         <h4>{{contacts[actualElement].name}}</h4>
                         <div>
-                            Ultimo accesso...
+                            Ultimo accesso {{contacts[actualElement].messages[contacts[actualElement].messages.length - 1].date}}
                         </div>
                     </div>
                 </div>
@@ -98,9 +104,8 @@
             <div class="chat-block">
                 <div 
                     v-for="message in contacts[actualElement].messages" 
-                    :class="message.status === 'sent' ? 'msg-sent' : 'msg-received'"
-                    >
-                    {{message.message}}
+                    :class="message.status === 'sent' ? 'msg-sent' : 'msg-received'">
+                        {{message.message}}
                     <div class="msg-data">{{message.time}}</div>
                 </div>
             </div>

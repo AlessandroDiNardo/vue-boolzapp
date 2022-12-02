@@ -102,13 +102,11 @@ body{
 
 .text-notification :last-child{
     color: grey;
-    text-decoration: underline;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .text-notification :last-child:hover{
     cursor: pointer;
-    color: black;
 }
 
 
@@ -169,16 +167,12 @@ body{
     border-radius: 50%;
 }
 
-.info-chat{
+.info-contact{
     width: 70%;
     line-height: 20px;
 }
 
-.info-chat :first-child{
-    font-weight: 500;
-}
-
-.info-chat :last-child{
+.info-contact :last-child{
     font-size: 12px;
     color: #54656f;
 }
@@ -261,15 +255,22 @@ body{
     width: 300px;
 }
 
+.drop{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    font-size: 12px;
+    color: #c8cdd2;
+}
+
 .msg-received{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    padding-bottom: 20px;
     position: relative;
     top: 0;
     left: 5%;
-    width: 300px;
+    width: 200px;
 }
 
 .msg-data{
@@ -284,7 +285,7 @@ body{
 
 .send-massage{
     width: 100%;
-    height: 60px;
+    height: 57px;
     display: flex;
     justify-content: space-between;
     align-items: center;

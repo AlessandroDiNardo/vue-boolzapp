@@ -197,7 +197,7 @@ createApp({
         },
 
         addMsg(){
-            if(this.newMsg.length < 1 || this.newMsg === ' '){
+            if(this.newMsg.length < 0 || this.newMsg === ''){
                 this.visible = false;
             }else{
                 this.contacts[this.actualElement].messages.push({
@@ -207,7 +207,7 @@ createApp({
                     status: 'sent'
                 });
                 setTimeout(this.answerContact, 1000);
-                this.visible = true;    
+                this.visible = true;   
             }
 
             this.newMsg = '';
@@ -221,6 +221,16 @@ createApp({
                 message: 'okayyy!!!',
                 status: 'received'
             });
+        },
+
+        filterContact(index){
+            nome = this.contacts[index].name.toLowerCase();
+
+            if(nome.includes(this.searchContact)){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 }).mount('#app')
